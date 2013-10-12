@@ -32,6 +32,18 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42784059-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
@@ -87,6 +99,9 @@
 
 <time datetime="2013-10-11T22:23:00-04:00" pubdate data-updated="true">Oct 11<span>th</span>, 2013</time>
         
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://GCorbel.github.io/blog">Comments</a>
+        
       </p>
     
   </header>
@@ -129,7 +144,7 @@
     
       <div class="sharing">
   
-  <a href="/blog//twitter.com/share" class="twitter-share-button" data-url="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/" data-via="" data-counturl="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/" >Tweet</a>
+  <a href="/blog//twitter.com/share" class="twitter-share-button" data-url="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/" data-via="GuirecCorbel" data-counturl="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/" >Tweet</a>
   
   
   
@@ -142,6 +157,12 @@
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -156,6 +177,35 @@
       </li>
     
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/GCorbel">@GCorbel</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'GCorbel',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/blog/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
@@ -175,6 +225,22 @@
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'guireccorbel';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/';
+        var disqus_url = 'http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
