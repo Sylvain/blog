@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Octopress : A blog for developers - Guirec Corbel</title>
+  <title>Octopress : Un moteur de blog pour les développeurs - Guirec Corbel</title>
   <meta name="author" content="Guirec Corbel">
 
   
-  <meta name="description" content="This is my first test
-">
+  <meta name="description" content="Comme beaucoup de développeurs, je souhaite partager ma connaissance sur certains sujets. Pour ce
+faire, j&#8217;ai voulu créer un blog. Cet article &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers">
+  <link rel="canonical" href="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-un-moteur-de-blog-pour-les-developpeurs">
   <link href="/blog/favicon.png" rel="icon">
   <link href="/blog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/blog/atom.xml" rel="alternate" title="Guirec Corbel" type="application/atom+xml">
@@ -85,7 +85,7 @@
   
   <header>
     
-      <h1 class="entry-title">Octopress : a blog for developers</h1>
+      <h1 class="entry-title">Octopress : un moteur de blog pour les développeurs</h1>
     
     
       <p class="meta">
@@ -111,7 +111,72 @@
   </header>
 
 
-<div class="entry-content"><p>This is my first test</p>
+<div class="entry-content"><p>Comme beaucoup de développeurs, je souhaite partager ma connaissance sur certains sujets. Pour ce
+faire, j&#8217;ai voulu créer un blog. Cet article décrit la démarche que j&#8217;ai effectuée afin de créer
+le blog.</p>
+
+<!--more-->
+
+
+<p>Afin de choisir un moteur de blog, j&#8217;ai fait le tour des sites de développeurs. Plusieurs solutions
+sont couramment utilisées.</p>
+
+<p>Premièrement, beaucoup de développeurs créent, eux-mêmes, leur site. Ne voulant pas réinventer la
+roue, j&#8217;ai choisi d&#8217;utiliser un outil déjà existant. Créer un blog est assez répandu et il y a une kyrielle de bons outils créés pour répondre à ce besoin.</p>
+
+<p>Il existe également beaucoup de personnes utilisant Wordpress. Wordpress ne correspond pas à ma
+philosophie. Tout d&#8217;abord, c&#8217;est écrit en PHP et j&#8217;aime Ruby. Ensuite, je trouve que Wordpress est
+une &ldquo;usine à gaz&rdquo;. C&#8217;est un peu comme utiliser Joomla pour faire des sites internet. C&#8217;est
+probablement très bien pour les webmasters néophites, mais je suis développeur et je souhaite
+avoir plus de contrôle sur mon site, kit à mettre les mains dans le cambouis.</p>
+
+<h2>Jekyll</h2>
+
+<p>En continuant mes recherches, j&#8217;ai trouvé Jekyll que je connaissais seulement de nom. Jekyll est un
+générateur de site statique. Celui-ci est extrêment puissant pour faire ce qu&#8217;il sait faire. Il
+permet de générer des pages HTML à partir de fichiers textes créés en Markdown ou Textile et Liquid.
+Avec Jekyll, il n&#8217;y a aucune base de données. Le résultat est uniquement du HTML et peut donc
+être hébergé n&#8217;importe où. J&#8217;aime le fait d&#8217;avoir un rendu similaire à celui de n&#8217;importe quel site
+sans avoir aucune logique du coté serveur.</p>
+
+<p>Petit avertissement : Jekyll est destiné aux développeurs. J&#8217;imagine très mal une personne novice en
+informatique utiliser cet outil. Si c&#8217;est ce que vous souhaitez dirigiez-vous sur Wordpress.</p>
+
+<p>Jekyll est un outil très simple. Peut-être un peu trop simple pour faire ce que je souhaitais. Pour
+mon blog, je souhaite avoir une partie &ldquo;sociale&rdquo; et un design agréable. J&#8217;ai tout d&#8217;abord trouvé
+<a href="http://jekyllbootstrap.com/">JekyllBootstrap</a>. Sincèrement, je le déconseille. Je trouve ça
+compliqué pour rien. La structure du code est assez compliquée et prend du temps à modifier
+quand on n’est pas habitué à Jekyll. Pour ma part, c&#8217;était plus simple de tout faire moi-même avec
+Jekyll.</p>
+
+<h2>Octopress</h2>
+
+<p>Rapidement, je suis tombé sur <a href="http://octopress.org/">Octopress</a>. Octopress est à
+la fois simple, puissant et facilement modifiable. Il offre des commandes pour générer des pages,
+générer des posts et publier les modifications. Sans connaitre l&#8217;outil et en connaissant un peu
+Jekyll, en 10 minutes j&#8217;ai pu créer un blog, le publier, ajouter un post et configurer twitter,
+GitHub, google plus, etc. En plus de cela, Octopress vient avec un design qui peut-être modifiable,
+mais qui me convient parfaitement. J&#8217;ai donc choisi de le laisser tel quel.</p>
+
+<p>Malheureusement, Octopress ne supporte pas l&#8217;internationalisation. J&#8217;ai suivi <a href="http://lkdjiin.github.io/blog/2013/07/13/je-veux-mon-blog-octopress-en-francais/">cet article</a> afin de franciser mon site.</p>
+
+<h2>GitHub-Pages</h2>
+
+<p>Pour ce qui est de l&#8217;hébergement, j&#8217;ai choisi <a href="http://pages.github.com/">GitHub-Pages</a>. Il y a
+énormément d&#8217;avantages à utiliser GitHub-Pages. Tout d&#8217;abord, c&#8217;est gratuit. Ensuite, cela permet
+de créer et de modifier les articles en utilisant les outils d&#8217;éditions en ligne de GitHub. Enfin,
+le plus gros avantage selon moi est que n&#8217;importe qui peut faire un fork du projet et proposer des
+améliorations ou corriger des fautes d&#8217;orthographe (merci à <a href="https://twitter.com/abelar_s">Sylvain Abélard</a>).</p>
+
+<p>En général, je trouve qu&#8217;avoir un site du type &ldquo;monsite.wordpress.com&rdquo; ne fait pas très professionnel
+et j&#8217;aurais tendance à acheter un nom de domaine. Dans ce cas, &ldquo;gcorbel.github.io/blog&rdquo; ça ne dérange
+pas du tout. Ça fait développeur qui ne connais pas trop mal GitHub. J&#8217;économise sur le nom de domaine!</p>
+
+<h2>Conclusion</h2>
+
+<p>Pour ma part, je suis très content et je conseille à tous les développeurs cherchant un moteur de blog de l&#8217;essayer.</p>
+
+<p>Je vais essayer d&#8217;ajouter des articles plus souvent. Restés connectés et <a href="https://twitter.com/GuirecCorbel">follow me on twitter</a>.</p>
 </div>
 
 
@@ -148,7 +213,7 @@
     
       <div class="sharing">
   
-  <a href="/blog//twitter.com/share" class="twitter-share-button" data-url="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/" data-via="GuirecCorbel" data-counturl="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/" >Tweet</a>
+  <a href="/blog//twitter.com/share" class="twitter-share-button" data-url="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-un-moteur-de-blog-pour-les-developpeurs/" data-via="GuirecCorbel" data-counturl="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-un-moteur-de-blog-pour-les-developpeurs/" >Tweet</a>
   
   
   
@@ -187,7 +252,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/blog/2013/10/11/octopress-a-blog-for-developers/">Octopress : a blog for developers</a>
+        <a href="/blog/blog/2013/10/11/octopress-un-moteur-de-blog-pour-les-developpeurs/">Octopress : un moteur de blog pour les développeurs</a>
       </li>
     
   </ul>
@@ -245,8 +310,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/';
-        var disqus_url = 'http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/';
+        var disqus_identifier = 'http://GCorbel.github.io/blog/blog/2013/10/11/octopress-un-moteur-de-blog-pour-les-developpeurs/';
+        var disqus_url = 'http://GCorbel.github.io/blog/blog/2013/10/11/octopress-un-moteur-de-blog-pour-les-developpeurs/';
         var disqus_script = 'embed.js';
       
     (function () {
