@@ -11,6 +11,8 @@ La semaine dernière, la société [Optik 360](http://www.optik360.com/), spéci
 
 Pour ceux qui ne connaissent pas encore Leap Motion, il s'agit d'un petit capteur de mouvements d'environ 8 centimètres. Pour plus d'informations, rendez-vous sur [leur site officiel](https://www.leapmotion.com/).
 
+<!--more-->
+
 Phase 1 : Installation
 ----------------------
 

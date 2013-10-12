@@ -9,6 +9,8 @@ categories:
 ---
 Il existe plusieurs différentes façons d'avoir une meilleure organisation des vues dans une application Ruby on Rails. Les Partials et les Heplers sont des méthodes standard. Il y a également les Presenters et les Decorators. Cela peut-être quelque peu difficile de savoir comment et quand les utiliser.
 
+<!--more-->
+
 Mon organisation
 ===========
 
