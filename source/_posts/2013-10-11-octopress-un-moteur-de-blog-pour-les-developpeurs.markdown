@@ -22,7 +22,7 @@ roue, j'ai choisi d'utiliser un outil déjà existant. Créer un blog est assez 
 Il existe également beaucoup de personnes utilisant Wordpress. Wordpress ne correspond pas à ma
 philosophie. Tout d'abord, c'est écrit en PHP et j'aime Ruby. Ensuite, je trouve que Wordpress est
 une "usine à gaz". C'est un peu comme utiliser Joomla pour faire des sites internet. C'est
-probablement très bien pour les webmasters néophites, mais je suis développeur et je souhaite
+probablement très bien pour les webmestres néophytes, mais je suis développeur et je souhaite
 avoir plus de contrôle sur mon site, kit à mettre les mains dans le cambouis.
 
 Jekyll
@@ -33,7 +33,7 @@ générateur de site statique. Celui-ci est extrêment puissant pour faire ce qu
 permet de générer des pages HTML à partir de fichiers textes créés en Markdown ou Textile et Liquid.
 Avec Jekyll, il n'y a aucune base de données. Le résultat est uniquement du HTML et peut donc
 être hébergé n'importe où. J'aime le fait d'avoir un rendu similaire à celui de n'importe quel site
-sans avoir aucune logique du coté serveur.
+sans avoir aucune logique du côté serveur.
 
 Petit avertissement : Jekyll est destiné aux développeurs. J'imagine très mal une personne novice en
 informatique utiliser cet outil. Si c'est ce que vous souhaitez dirigiez-vous sur Wordpress.
