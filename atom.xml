@@ -4,7 +4,7 @@
   <title><![CDATA[Guirec Corbel]]></title>
   <link href="http://GCorbel.github.io/blog/atom.xml" rel="self"/>
   <link href="http://GCorbel.github.io/blog/"/>
-  <updated>2013-10-12T09:20:41-04:00</updated>
+  <updated>2013-10-12T09:25:12-04:00</updated>
   <id>http://GCorbel.github.io/blog/</id>
   <author>
     <name><![CDATA[Guirec Corbel]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>La semaine dernière, la société <a href="http://www.optik360.com/">Optik 360</a>, spécialisée en photo 360 degrés, m&#8217;a demandé de tester Leap Motion en faisant une application permettant de visionner des images panoramiques. L&#8217;image devait se déplacer en fonction des mouvements fait par l&#8217;utilisateur.</p>
 
 <p>Pour ceux qui ne connaissent pas encore Leap Motion, il s&#8217;agit d&#8217;un petit capteur de mouvements d&#8217;environ 8 centimètres. Pour plus d&#8217;informations, rendez-vous sur <a href="https://www.leapmotion.com/">leur site officiel</a>.</p>
+
+<!--more-->
+
 
 <h2>Phase 1 : Installation</h2>
 
@@ -200,6 +203,9 @@
     <updated>2013-10-12T07:38:00-04:00</updated>
     <id>http://GCorbel.github.io/blog/blog/2013/10/12/quand-jutilise-des-helpers-des-partials-des-presenters-et-des-decorators</id>
     <content type="html"><![CDATA[<p>Il existe plusieurs différentes façons d&#8217;avoir une meilleure organisation des vues dans une application Ruby on Rails. Les Partials et les Heplers sont des méthodes standard. Il y a également les Presenters et les Decorators. Cela peut-être quelque peu difficile de savoir comment et quand les utiliser.</p>
+
+<!--more-->
+
 
 <h1>Mon organisation</h1>
 

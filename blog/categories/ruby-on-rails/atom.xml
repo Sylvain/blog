@@ -4,7 +4,7 @@
   <title><![CDATA[Catégorie : Ruby On Rails | Guirec Corbel]]></title>
   <link href="http://GCorbel.github.io/blog/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://GCorbel.github.io/blog/"/>
-  <updated>2013-10-12T09:20:41-04:00</updated>
+  <updated>2013-10-12T09:25:12-04:00</updated>
   <id>http://GCorbel.github.io/blog/</id>
   <author>
     <name><![CDATA[Guirec Corbel]]></name>
@@ -19,6 +19,9 @@
     <updated>2013-10-12T07:38:00-04:00</updated>
     <id>http://GCorbel.github.io/blog/blog/2013/10/12/quand-jutilise-des-helpers-des-partials-des-presenters-et-des-decorators</id>
     <content type="html"><![CDATA[<p>Il existe plusieurs différentes façons d'avoir une meilleure organisation des vues dans une application Ruby on Rails. Les Partials et les Heplers sont des méthodes standard. Il y a également les Presenters et les Decorators. Cela peut-être quelque peu difficile de savoir comment et quand les utiliser.</p>
+
+<!--more-->
+
 
 <h1>Mon organisation</h1>
 

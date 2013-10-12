@@ -4,7 +4,7 @@
   <title><![CDATA[Catégorie : Leap Motion | Guirec Corbel]]></title>
   <link href="http://GCorbel.github.io/blog/blog/categories/leap-motion/atom.xml" rel="self"/>
   <link href="http://GCorbel.github.io/blog/"/>
-  <updated>2013-10-12T09:20:41-04:00</updated>
+  <updated>2013-10-12T09:25:12-04:00</updated>
   <id>http://GCorbel.github.io/blog/</id>
   <author>
     <name><![CDATA[Guirec Corbel]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>La semaine dernière, la société <a href="http://www.optik360.com/">Optik 360</a>, spécialisée en photo 360 degrés, m'a demandé de tester Leap Motion en faisant une application permettant de visionner des images panoramiques. L'image devait se déplacer en fonction des mouvements fait par l'utilisateur.</p>
 
 <p>Pour ceux qui ne connaissent pas encore Leap Motion, il s'agit d'un petit capteur de mouvements d'environ 8 centimètres. Pour plus d'informations, rendez-vous sur <a href="https://www.leapmotion.com/">leur site officiel</a>.</p>
+
+<!--more-->
+
 
 <h2>Phase 1 : Installation</h2>
 
