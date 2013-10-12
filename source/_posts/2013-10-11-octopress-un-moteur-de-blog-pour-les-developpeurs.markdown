@@ -75,4 +75,4 @@ Conclusion
 
 Pour ma part, je suis très content et je conseille à tous les développeurs cherchant un moteur de blog de l'essayer.
 
-Je vais essayer d'ajouter des articles plus souvent. Restés connectés et [follow me on twitter](https://twitter.com/GuirecCorbel).
+Je vais essayer d'ajouter des articles plus souvent. Restez connectés et [follow me on twitter](https://twitter.com/GuirecCorbel).
