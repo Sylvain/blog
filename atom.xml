@@ -4,7 +4,7 @@
   <title><![CDATA[Guirec Corbel]]></title>
   <link href="http://GCorbel.github.io/blog/atom.xml" rel="self"/>
   <link href="http://GCorbel.github.io/blog/"/>
-  <updated>2013-10-12T16:44:47-04:00</updated>
+  <updated>2013-10-12T16:50:00-04:00</updated>
   <id>http://GCorbel.github.io/blog/</id>
   <author>
     <name><![CDATA[Guirec Corbel]]></name>
@@ -258,7 +258,7 @@ roue, j&#8217;ai choisi d&#8217;utiliser un outil déjà existant. Créer un blo
 <p>Il existe également beaucoup de personnes utilisant Wordpress. Wordpress ne correspond pas à ma
 philosophie. Tout d&#8217;abord, c&#8217;est écrit en PHP et j&#8217;aime Ruby. Ensuite, je trouve que Wordpress est
 une &ldquo;usine à gaz&rdquo;. C&#8217;est un peu comme utiliser Joomla pour faire des sites internet. C&#8217;est
-probablement très bien pour les webmasters néophites, mais je suis développeur et je souhaite
+probablement très bien pour les webmestres néophytes, mais je suis développeur et je souhaite
 avoir plus de contrôle sur mon site, kit à mettre les mains dans le cambouis.</p>
 
 <h2>Jekyll</h2>
@@ -268,7 +268,7 @@ générateur de site statique. Celui-ci est extrêment puissant pour faire ce qu
 permet de générer des pages HTML à partir de fichiers textes créés en Markdown ou Textile et Liquid.
 Avec Jekyll, il n&#8217;y a aucune base de données. Le résultat est uniquement du HTML et peut donc
 être hébergé n&#8217;importe où. J&#8217;aime le fait d&#8217;avoir un rendu similaire à celui de n&#8217;importe quel site
-sans avoir aucune logique du coté serveur.</p>
+sans avoir aucune logique du côté serveur.</p>
 
 <p>Petit avertissement : Jekyll est destiné aux développeurs. J&#8217;imagine très mal une personne novice en
 informatique utiliser cet outil. Si c&#8217;est ce que vous souhaitez dirigiez-vous sur Wordpress.</p>
@@ -307,7 +307,7 @@ pas du tout. Ça fait développeur qui ne connais pas trop mal GitHub. J&#8217;�
 
 <p>Pour ma part, je suis très content et je conseille à tous les développeurs cherchant un moteur de blog de l&#8217;essayer.</p>
 
-<p>Je vais essayer d&#8217;ajouter des articles plus souvent. Restés connectés et <a href="https://twitter.com/GuirecCorbel">follow me on twitter</a>.</p>
+<p>Je vais essayer d&#8217;ajouter des articles plus souvent. Restez connectés et <a href="https://twitter.com/GuirecCorbel">follow me on twitter</a>.</p>
 ]]></content>
   </entry>
   
