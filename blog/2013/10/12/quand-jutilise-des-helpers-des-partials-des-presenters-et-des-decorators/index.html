@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Octopress : A blog for developers - Guirec Corbel</title>
+  <title>Quand j'utilise des Helpers, des Partials, des Presenters et des Decorators - Guirec Corbel</title>
   <meta name="author" content="Guirec Corbel">
 
   
-  <meta name="description" content="This is my first test
-">
+  <meta name="description" content="Il existe plusieurs différentes façons d&#8217;avoir une meilleure organisation des vues dans une application Ruby on Rails. Les Partials et les &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers">
+  <link rel="canonical" href="http://GCorbel.github.io/blog/blog/2013/10/12/quand-jutilise-des-helpers-des-partials-des-presenters-et-des-decorators">
   <link href="/blog/favicon.png" rel="icon">
   <link href="/blog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/blog/atom.xml" rel="alternate" title="Guirec Corbel" type="application/atom+xml">
@@ -81,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Octopress : A Blog for Developers</h1>
+      <h1 class="entry-title">Quand J'utilise Des Helpers, Des Partials, Des Presenters Et Des Decorators</h1>
     
     
       <p class="meta">
@@ -97,7 +96,7 @@
   
 
 
-<time datetime="2013-10-11T22:23:00-04:00" pubdate data-updated="true">Oct 11<span>th</span>, 2013</time>
+<time datetime="2013-10-12T07:38:00-04:00" pubdate data-updated="true">Oct 12<span>th</span>, 2013</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://GCorbel.github.io/blog">Comments</a>
@@ -107,7 +106,35 @@
   </header>
 
 
-<div class="entry-content"><p>This is my first test</p>
+<div class="entry-content"><p>Il existe plusieurs différentes façons d&#8217;avoir une meilleure organisation des vues dans une application Ruby on Rails. Les Partials et les Heplers sont des méthodes standard. Il y a également les Presenters et les Decorators. Cela peut-être quelque peu difficile de savoir comment et quand les utiliser.</p>
+
+<h1>Mon organisation</h1>
+
+<p>Toutes les techniques ont leur propre utilité.</p>
+
+<h2>Les Helpers</h2>
+
+<p>Les Helpers sont des méthodes génériques qui peuvent être utilisées pour différents types d&#8217;objet. Je crée des helpers du style <code>link_to_update</code>, <code>big_image</code>, <code>styled_form</code>, etc. Ces méthodes créent du code html avec, par exemple, un style css ou un texte standard.</p>
+
+<h2>Les Partials</h2>
+
+<p>Les Partials sont utilisés pour diviser une grosse vue dans de plus petites parties logiques. Je peux avoir un partial <code>side_menu</code>, <code>comment_list</code>, <code>header</code>, etc.</p>
+
+<h2>Les Presenters</h2>
+
+<p>Les Presenters sont créés pour des requêtes plus compliquées avec un modèle ou plus. J&#8217;ai des presenters comme <code>@page_presenter.page_in_category(ruby_category)</code> ou <code>@user_presenter.user_following(an_article)</code>.</p>
+
+<h2>Les Decorators</h2>
+
+<p>Les Decorators doivent interagir avec un modèle seulement et ne doivent pas avoir de paramètre (si possible). Je peux faire cette sorte de code : <code>user.full_name</code>, <code>page.big_title</code> ou <code>category.permalink</code>. J&#8217;utilise la Gem <a href="https://github.com/drapergem/draper">Draper</a>.</p>
+
+<p>Si je cherche plusieurs modèles, Je n&#8217;accède pas à la classe du modèle directement dans la vue. J&#8217;utilise la fonction de Draper <a href="https://github.com/drapergem/draper#decorated-finders">decorates_finders</a>.</p>
+
+<h2>Conclusion</h2>
+
+<p>Il peut y avoir de meilleures solutions mais ça marche pour moi. Si vous pensez avoir de meilleures solutions, dites le moi!</p>
+
+<p>Il y a juste une chose que je n&#8217;aime pas avec les Presenters. Je n&#8217;aime pas instancier un objet dans le contrôleur et le passer à la vue. Cela ne respecte pas la <a href="http://robots.thoughtbot.com/post/50655960596/sandi-metz-rules-for-developers">règle de Sandi Metz</a>. Toutes les règles peuvent être brisées avec des bonnes raisons&hellip;</p>
 </div>
 
 
@@ -130,12 +157,12 @@
   
 
 
-<time datetime="2013-10-11T22:23:00-04:00" pubdate data-updated="true">Oct 11<span>th</span>, 2013</time>
+<time datetime="2013-10-12T07:38:00-04:00" pubdate data-updated="true">Oct 12<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/blog/categories/blog/'>Blog</a>
+    <a class='category' href='/blog/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/blog/categories/ruby-on-rails/'>Ruby On Rails</a>
   
 </span>
 
@@ -144,7 +171,7 @@
     
       <div class="sharing">
   
-  <a href="/blog//twitter.com/share" class="twitter-share-button" data-url="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/" data-via="GuirecCorbel" data-counturl="http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/" >Tweet</a>
+  <a href="/blog//twitter.com/share" class="twitter-share-button" data-url="http://GCorbel.github.io/blog/blog/2013/10/12/quand-jutilise-des-helpers-des-partials-des-presenters-et-des-decorators/" data-via="GuirecCorbel" data-counturl="http://GCorbel.github.io/blog/blog/2013/10/12/quand-jutilise-des-helpers-des-partials-des-presenters-et-des-decorators/" >Tweet</a>
   
   
   
@@ -153,8 +180,10 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/blog/2013/10/11/octopress-a-blog-for-developers/" title="Previous Post: Octopress : A blog for developers">&laquo; Octopress : A blog for developers</a>
       
-        <a class="basic-alignment right" href="/blog/blog/2013/10/12/quand-jutilise-des-helpers-des-partials-des-presenters-et-des-decorators/" title="Next Post: Quand j'utilise des Helpers, des Partials, des Presenters et des Decorators">Quand j'utilise des Helpers, des Partials, des Presenters et des Decorators &raquo;</a>
+      
+        <a class="basic-alignment right" href="/blog/blog/2013/10/12/leap-motion-le-point-de-vue-dun-developpeur/" title="Next Post: Leap Motion : le point de vue d'un développeur">Leap Motion : le point de vue d'un développeur &raquo;</a>
       
     </p>
   </footer>
@@ -241,8 +270,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/';
-        var disqus_url = 'http://GCorbel.github.io/blog/blog/2013/10/11/octopress-a-blog-for-developers/';
+        var disqus_identifier = 'http://GCorbel.github.io/blog/blog/2013/10/12/quand-jutilise-des-helpers-des-partials-des-presenters-et-des-decorators/';
+        var disqus_url = 'http://GCorbel.github.io/blog/blog/2013/10/12/quand-jutilise-des-helpers-des-partials-des-presenters-et-des-decorators/';
         var disqus_script = 'embed.js';
       
     (function () {
