@@ -29,11 +29,11 @@ Pour mon projet, j'ai choisi de développer en JavaScript. LeapMotion permet de 
 
 La bibliothèque offerte par Leap est impressionnante. C'est super simple de faire une application. Il suffit de quelques lignes de code. Voici un exemple :
 
-{% highlight coffeescript %}
+``` javascript
 Leap.loop(function(frame) {
-  console.log(frame.fingers.length)
+  console.log(frame.fingers.length);
 });
-{% endhighlight %}
+```
 
 Ce petit bout de code permet de voir le nombre de doigts détectés par le contrôleur. N'importe quel développeur est capable de faire ça.
 
@@ -49,7 +49,7 @@ Phase 4 : Intégration de Leap à la bibliothèque
 
 J'ai étudié le comportement de la souris et j'ai voulu le reproduire. Tout d'abord, j'ai extrait le code relatif à la souris dans un objet à part. Pour tester le déplacement avec Leap Motion, mon premier réflexe a été de faire ce genre de code :
 
-{% highlight coffeescript %}
+``` coffeescript
 class LeapPano.LeapMotion
   constructor: (view) ->
     @view = view
@@ -58,11 +58,11 @@ class LeapPano.LeapMotion
     Leap.loop((frame) =>
       @view.setLon(@view.getLon() + .1)
     )
-{% endhighlight %}
+```
 
 Ce code permet, à chaque itération, de déplacer horizontalement la caméra. Le problème que je trouve avec ce que est que je ne gère pas la rapidité des itérations. Je n'ai pas trouvé de façon de faire dans la documentation de Leap. J'ai donc choisi de modifier le code comme ceci :
 
-{% highlight coffeescript %}
+``` coffeescript
 class LeapPano.LeapMotion
   constructor: (view) ->
     @view = view
@@ -78,13 +78,13 @@ class LeapPano.LeapMotion
       @view.setLon(@view.getLon() + .1)
 
     setTimeout(@checkMotion, 10)
-{% endhighlight %}
+```
 
 L'appel de la fonction `Leap.loop` est extraite de cet objet et le résultat est passé via un setter à chaque itération. À l'initialisation, la fonction setTimeout, permettant d’exécuter la fonction de reconnaissance des mouvements toutes les dix millisecondes, est lancée. Ce code permet également de ne pas avoir plusieurs appels à la fonction `Leap.loop`. La boucle est lancée dans la page principale et les données détectées sont transmises aux différents objets en ayant besoin. Je crois que c'est une meilleure architecture.
 
 Maintenant que ça marche comme je veux, je peux m'occuper de la reconnaissance des mouvements. J'ai modifié la fonction `checkMotion` comme ceci :
 
-{% highlight coffeescript %}
+``` coffeescript
 checkMotion: =>
   if @frame?
     finger = @frame.fingers[0]
@@ -95,28 +95,28 @@ checkMotion: =>
       @view.setLat(@view.getLat() + ((y-160)/320))
 
   setTimeout(@checkMotion, 10)
-{% endhighlight %}
+```
 
 `@frame.fingers[0]` permet de récupérer le premier doigt détecté. `finger.tipPosition` retourne un tableau contenant la position en X, en Y et en Z. Enfin, je change la position de la caméra dans la scène 3D. Le calcul d'un ratio permet de faire en sorte d’accélérer ou de ralentir le mouvement selon la position du doigt. Plus le doigt est éloigné du centre, plus le déplacement est rapide.
 
 La dernière fonction que j'ai voulu ajouté a été de changer l'image lorsque l'on décrit un cercle. J'ai donc ajouté ceci :
 
-{% highlight coffeescript %}
+``` coffeescript
 if(@frame.gestures.length > 0)
   gesture = @frame.gestures[0]
   if gesture.type == "circle"
     @view.switchFile()
-{% endhighlight %}
+```
 
 Encore une fois, c'est très simple. `@frame.gestures` retourne une liste des mouvements détectés. Par la suite, il faut vérifier si le type de mouvement est un cercle. Si c'est le cas, alors on change d'image.
 
 Pour permettre la reconnaissance des mouvements, il est nécessaire d'appeller la fonction `Leap.loop` :
 
-{% highlight coffeescript %}
+``` coffeescript
 Leap.loop({enableGestures: true}, function(frame) {
   pano.setFrame(frame)
 })
-{% endhighlight %}
+```
 
 Et voila! Tout fonctionne. En tant que bon contributeur Open-Source j'ai affiché le code ici : [https://github.com/GCorbel/LeapPano](https://github.com/GCorbel/LeapPano). J'ai également créé un page grâce a [GitHub-Pages](http://pages.github.com/) visible ici : [http://gcorbel.github.io/LeapPano/](http://gcorbel.github.io/LeapPano/).
 
