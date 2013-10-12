@@ -4,7 +4,7 @@
   <title><![CDATA[Guirec Corbel]]></title>
   <link href="http://GCorbel.github.io/blog/atom.xml" rel="self"/>
   <link href="http://GCorbel.github.io/blog/"/>
-  <updated>2013-10-12T07:42:49-04:00</updated>
+  <updated>2013-10-12T09:04:16-04:00</updated>
   <id>http://GCorbel.github.io/blog/</id>
   <author>
     <name><![CDATA[Guirec Corbel]]></name>
@@ -38,11 +38,13 @@
 
 <p>La bibliothèque offerte par Leap est impressionnante. C&#8217;est super simple de faire une application. Il suffit de quelques lignes de code. Voici un exemple :</p>
 
-<div>
-  <pre><code class='coffeescript'>Leap.loop(function(frame) {
-  console.log(frame.fingers.length)
-});</code></pre>
-</div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Leap</span><span class="p">.</span><span class="nx">loop</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">frame</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">frame</span><span class="p">.</span><span class="nx">fingers</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Ce petit bout de code permet de voir le nombre de doigts détectés par le contrôleur. N&#8217;importe quel développeur est capable de faire ça.</p>
@@ -57,78 +59,113 @@
 
 <p>J&#8217;ai étudié le comportement de la souris et j&#8217;ai voulu le reproduire. Tout d&#8217;abord, j&#8217;ai extrait le code relatif à la souris dans un objet à part. Pour tester le déplacement avec Leap Motion, mon premier réflexe a été de faire ce genre de code :</p>
 
-<div>
-  <pre><code class='coffeescript'>class LeapPano.LeapMotion
-  constructor: (view) -&gt;
-    @view = view
-
-  init: =&gt;
-    Leap.loop((frame) =&gt;
-      @view.setLon(@view.getLon() + .1)
-    )</code></pre>
-</div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="k">class</span> <span class="nx">LeapPano</span><span class="p">.</span><span class="nx">LeapMotion</span>
+</span><span class='line'>  <span class="nv">constructor: </span><span class="nf">(view) -&gt;</span>
+</span><span class='line'>    <span class="vi">@view = </span><span class="nx">view</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nv">init: </span><span class="o">=&gt;</span>
+</span><span class='line'>    <span class="nx">Leap</span><span class="p">.</span><span class="nx">loop</span><span class="p">(</span><span class="nf">(frame) =&gt;</span>
+</span><span class='line'>      <span class="nx">@view</span><span class="p">.</span><span class="nx">setLon</span><span class="p">(</span><span class="nx">@view</span><span class="p">.</span><span class="nx">getLon</span><span class="p">()</span> <span class="o">+</span> <span class="p">.</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Ce code permet, à chaque itération, de déplacer horizontalement la caméra. Le problème que je trouve avec ce que est que je ne gère pas la rapidité des itérations. Je n&#8217;ai pas trouvé de façon de faire dans la documentation de Leap. J&#8217;ai donc choisi de modifier le code comme ceci :</p>
 
-<div>
-  <pre><code class='coffeescript'>class LeapPano.LeapMotion
-  constructor: (view) -&gt;
-    @view = view
-
-  setFrame: (frame) -&gt;
-    @frame = frame
-
-  init: -&gt;
-    setTimeout(@checkMotion, 10)
-
-  checkMotion: =&gt;
-    if @frame?
-      @view.setLon(@view.getLon() + .1)
-
-    setTimeout(@checkMotion, 10)</code></pre>
-</div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="k">class</span> <span class="nx">LeapPano</span><span class="p">.</span><span class="nx">LeapMotion</span>
+</span><span class='line'>  <span class="nv">constructor: </span><span class="nf">(view) -&gt;</span>
+</span><span class='line'>    <span class="vi">@view = </span><span class="nx">view</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nv">setFrame: </span><span class="nf">(frame) -&gt;</span>
+</span><span class='line'>    <span class="vi">@frame = </span><span class="nx">frame</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nv">init: </span><span class="nf">-&gt;</span>
+</span><span class='line'>    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">@checkMotion</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nv">checkMotion: </span><span class="o">=&gt;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="nx">@frame</span><span class="o">?</span>
+</span><span class='line'>      <span class="nx">@view</span><span class="p">.</span><span class="nx">setLon</span><span class="p">(</span><span class="nx">@view</span><span class="p">.</span><span class="nx">getLon</span><span class="p">()</span> <span class="o">+</span> <span class="p">.</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">@checkMotion</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>L&#8217;appel de la fonction <code>Leap.loop</code> est extraite de cet objet et le résultat est passé via un setter à chaque itération. À l&#8217;initialisation, la fonction setTimeout, permettant d’exécuter la fonction de reconnaissance des mouvements toutes les dix millisecondes, est lancée. Ce code permet également de ne pas avoir plusieurs appels à la fonction <code>Leap.loop</code>. La boucle est lancée dans la page principale et les données détectées sont transmises aux différents objets en ayant besoin. Je crois que c&#8217;est une meilleure architecture.</p>
 
 <p>Maintenant que ça marche comme je veux, je peux m&#8217;occuper de la reconnaissance des mouvements. J&#8217;ai modifié la fonction <code>checkMotion</code> comme ceci :</p>
 
-<div>
-  <pre><code class='coffeescript'>checkMotion: =&gt;
-  if @frame?
-    finger = @frame.fingers[0]
-    if finger?
-      x = finger.tipPosition[0]
-      y = finger.tipPosition[1]
-      @view.setLon(@view.getLon() + (x/320))
-      @view.setLat(@view.getLat() + ((y-160)/320))
-
-  setTimeout(@checkMotion, 10)</code></pre>
-</div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nv">checkMotion: </span><span class="o">=&gt;</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nx">@frame</span><span class="o">?</span>
+</span><span class='line'>    <span class="nv">finger = </span><span class="nx">@frame</span><span class="p">.</span><span class="nx">fingers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>    <span class="k">if</span> <span class="nx">finger</span><span class="o">?</span>
+</span><span class='line'>      <span class="nv">x = </span><span class="nx">finger</span><span class="p">.</span><span class="nx">tipPosition</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>      <span class="nv">y = </span><span class="nx">finger</span><span class="p">.</span><span class="nx">tipPosition</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'>      <span class="nx">@view</span><span class="p">.</span><span class="nx">setLon</span><span class="p">(</span><span class="nx">@view</span><span class="p">.</span><span class="nx">getLon</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="nx">x</span><span class="o">/</span><span class="mi">320</span><span class="p">))</span>
+</span><span class='line'>      <span class="nx">@view</span><span class="p">.</span><span class="nx">setLat</span><span class="p">(</span><span class="nx">@view</span><span class="p">.</span><span class="nx">getLat</span><span class="p">()</span> <span class="o">+</span> <span class="p">((</span><span class="nx">y</span><span class="o">-</span><span class="mi">160</span><span class="p">)</span><span class="o">/</span><span class="mi">320</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">@checkMotion</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p><code>@frame.fingers[0]</code> permet de récupérer le premier doigt détecté. <code>finger.tipPosition</code> retourne un tableau contenant la position en X, en Y et en Z. Enfin, je change la position de la caméra dans la scène 3D. Le calcul d&#8217;un ratio permet de faire en sorte d’accélérer ou de ralentir le mouvement selon la position du doigt. Plus le doigt est éloigné du centre, plus le déplacement est rapide.</p>
 
 <p>La dernière fonction que j&#8217;ai voulu ajouté a été de changer l&#8217;image lorsque l&#8217;on décrit un cercle. J&#8217;ai donc ajouté ceci :</p>
 
-<div>
-  <pre><code class='coffeescript'>if(@frame.gestures.length &gt; 0)
-  gesture = @frame.gestures[0]
-  if gesture.type == &quot;circle&quot;
-    @view.switchFile()</code></pre>
-</div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="k">if</span><span class="p">(</span><span class="nx">@frame</span><span class="p">.</span><span class="nx">gestures</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="nv">gesture = </span><span class="nx">@frame</span><span class="p">.</span><span class="nx">gestures</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nx">gesture</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s">&quot;circle&quot;</span>
+</span><span class='line'>    <span class="nx">@view</span><span class="p">.</span><span class="nx">switchFile</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Encore une fois, c&#8217;est très simple. <code>@frame.gestures</code> retourne une liste des mouvements détectés. Par la suite, il faut vérifier si le type de mouvement est un cercle. Si c&#8217;est le cas, alors on change d&#8217;image.</p>
 
 <p>Pour permettre la reconnaissance des mouvements, il est nécessaire d&#8217;appeller la fonction <code>Leap.loop</code> :</p>
 
-<div>
-  <pre><code class='coffeescript'>Leap.loop({enableGestures: true}, function(frame) {
-  pano.setFrame(frame)
-})</code></pre>
-</div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">Leap</span><span class="p">.</span><span class="nx">loop</span><span class="p">({</span><span class="nv">enableGestures: </span><span class="kc">true</span><span class="p">},</span> <span class="nx">function</span><span class="p">(</span><span class="nx">frame</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">pano</span><span class="p">.</span><span class="nx">setFrame</span><span class="p">(</span><span class="nx">frame</span><span class="p">)</span>
+</span><span class='line'><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Et voila! Tout fonctionne. En tant que bon contributeur Open-Source j&#8217;ai affiché le code ici : <a href="https://github.com/GCorbel/LeapPano">https://github.com/GCorbel/LeapPano</a>. J&#8217;ai également créé un page grâce a <a href="http://pages.github.com/">GitHub-Pages</a> visible ici : <a href="http://gcorbel.github.io/LeapPano/">http://gcorbel.github.io/LeapPano/</a>.</p>

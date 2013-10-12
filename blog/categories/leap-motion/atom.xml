@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Leap Motion | Guirec Corbel]]></title>
+  <title><![CDATA[Catégorie : Leap Motion | Guirec Corbel]]></title>
   <link href="http://GCorbel.github.io/blog/blog/categories/leap-motion/atom.xml" rel="self"/>
   <link href="http://GCorbel.github.io/blog/"/>
-  <updated>2013-10-12T07:42:49-04:00</updated>
+  <updated>2013-10-12T09:04:16-04:00</updated>
   <id>http://GCorbel.github.io/blog/</id>
   <author>
     <name><![CDATA[Guirec Corbel]]></name>
@@ -38,12 +38,11 @@
 
 <p>La bibliothèque offerte par Leap est impressionnante. C'est super simple de faire une application. Il suffit de quelques lignes de code. Voici un exemple :</p>
 
-<p><div>
-  <pre><code class='coffeescript'>Leap.loop(function(frame) {
-  console.log(frame.fingers.length)
-});</code></pre>
-</div>
-</p>
+<p><code>javascript
+Leap.loop(function(frame) {
+  console.log(frame.fingers.length);
+});
+</code></p>
 
 <p>Ce petit bout de code permet de voir le nombre de doigts détectés par le contrôleur. N'importe quel développeur est capable de faire ça.</p>
 
@@ -57,101 +56,93 @@
 
 <p>J'ai étudié le comportement de la souris et j'ai voulu le reproduire. Tout d'abord, j'ai extrait le code relatif à la souris dans un objet à part. Pour tester le déplacement avec Leap Motion, mon premier réflexe a été de faire ce genre de code :</p>
 
-<p><div>
-  <pre><code class='coffeescript'>class LeapPano.LeapMotion
-  constructor: (view) &amp;ndash;&gt;&lt;/p&gt;
+<p>``` coffeescript
+class LeapPano.LeapMotion
+  constructor: (view) &ndash;></p>
 
-&lt;pre&gt;&lt;code&gt;@view = view
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>@view = view
+</code></pre>
 
-&lt;p&gt;  init: =&gt;&lt;/p&gt;
+<p>  init: =></p>
 
-&lt;pre&gt;&lt;code&gt;Leap.loop((frame) =&amp;gt;
+<pre><code>Leap.loop((frame) =&gt;
   @view.setLon(@view.getLon() + .1)
 )
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;</code></pre>
-</div>
-</p>
+<p>```</p>
 
 <p>Ce code permet, à chaque itération, de déplacer horizontalement la caméra. Le problème que je trouve avec ce que est que je ne gère pas la rapidité des itérations. Je n'ai pas trouvé de façon de faire dans la documentation de Leap. J'ai donc choisi de modifier le code comme ceci :</p>
 
-<p><div>
-  <pre><code class='coffeescript'>class LeapPano.LeapMotion
-  constructor: (view) &amp;ndash;&gt;&lt;/p&gt;
+<p>``` coffeescript
+class LeapPano.LeapMotion
+  constructor: (view) &ndash;></p>
 
-&lt;pre&gt;&lt;code&gt;@view = view
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>@view = view
+</code></pre>
 
-&lt;p&gt;  setFrame: (frame) &amp;ndash;&gt;&lt;/p&gt;
+<p>  setFrame: (frame) &ndash;></p>
 
-&lt;pre&gt;&lt;code&gt;@frame = frame
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>@frame = frame
+</code></pre>
 
-&lt;p&gt;  init: &amp;ndash;&gt;&lt;/p&gt;
+<p>  init: &ndash;></p>
 
-&lt;pre&gt;&lt;code&gt;setTimeout(@checkMotion, 10)
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>setTimeout(@checkMotion, 10)
+</code></pre>
 
-&lt;p&gt;  checkMotion: =&gt;&lt;/p&gt;
+<p>  checkMotion: =></p>
 
-&lt;pre&gt;&lt;code&gt;if @frame?
+<pre><code>if @frame?
   @view.setLon(@view.getLon() + .1)
 
 setTimeout(@checkMotion, 10)
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;</code></pre>
-</div>
-</p>
+<p>```</p>
 
 <p>L'appel de la fonction <code>Leap.loop</code> est extraite de cet objet et le résultat est passé via un setter à chaque itération. À l'initialisation, la fonction setTimeout, permettant d’exécuter la fonction de reconnaissance des mouvements toutes les dix millisecondes, est lancée. Ce code permet également de ne pas avoir plusieurs appels à la fonction <code>Leap.loop</code>. La boucle est lancée dans la page principale et les données détectées sont transmises aux différents objets en ayant besoin. Je crois que c'est une meilleure architecture.</p>
 
 <p>Maintenant que ça marche comme je veux, je peux m'occuper de la reconnaissance des mouvements. J'ai modifié la fonction <code>checkMotion</code> comme ceci :</p>
 
-<p><div>
-  <pre><code class='coffeescript'>checkMotion: =&gt;
-  if @frame?&lt;/p&gt;
+<p>``` coffeescript
+checkMotion: =>
+  if @frame?</p>
 
-&lt;pre&gt;&lt;code&gt;finger = @frame.fingers[0]
+<pre><code>finger = @frame.fingers[0]
 if finger?
   x = finger.tipPosition[0]
   y = finger.tipPosition[1]
   @view.setLon(@view.getLon() + (x/320))
   @view.setLat(@view.getLat() + ((y-160)/320))
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;  setTimeout(@checkMotion, 10)</code></pre>
-</div>
-</p>
+<p>  setTimeout(@checkMotion, 10)
+```</p>
 
 <p><code>@frame.fingers[0]</code> permet de récupérer le premier doigt détecté. <code>finger.tipPosition</code> retourne un tableau contenant la position en X, en Y et en Z. Enfin, je change la position de la caméra dans la scène 3D. Le calcul d'un ratio permet de faire en sorte d’accélérer ou de ralentir le mouvement selon la position du doigt. Plus le doigt est éloigné du centre, plus le déplacement est rapide.</p>
 
 <p>La dernière fonction que j'ai voulu ajouté a été de changer l'image lorsque l'on décrit un cercle. J'ai donc ajouté ceci :</p>
 
-<p><div>
-  <pre><code class='coffeescript'>if(@frame.gestures.length &gt; 0)
+<p>``` coffeescript
+if(@frame.gestures.length > 0)
   gesture = @frame.gestures[0]
-  if gesture.type == &amp;ldquo;circle&amp;rdquo;&lt;/p&gt;
+  if gesture.type == &ldquo;circle&rdquo;</p>
 
-&lt;pre&gt;&lt;code&gt;@view.switchFile()
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>@view.switchFile()
+</code></pre>
 
-&lt;p&gt;</code></pre>
-</div>
-</p>
+<p>```</p>
 
 <p>Encore une fois, c'est très simple. <code>@frame.gestures</code> retourne une liste des mouvements détectés. Par la suite, il faut vérifier si le type de mouvement est un cercle. Si c'est le cas, alors on change d'image.</p>
 
 <p>Pour permettre la reconnaissance des mouvements, il est nécessaire d'appeller la fonction <code>Leap.loop</code> :</p>
 
-<p><div>
-  <pre><code class='coffeescript'>Leap.loop({enableGestures: true}, function(frame) {
+<p><code>coffeescript
+Leap.loop({enableGestures: true}, function(frame) {
   pano.setFrame(frame)
-})</code></pre>
-</div>
-</p>
+})
+</code></p>
 
 <p>Et voila! Tout fonctionne. En tant que bon contributeur Open-Source j'ai affiché le code ici : <a href="https://github.com/GCorbel/LeapPano">https://github.com/GCorbel/LeapPano</a>. J'ai également créé un page grâce a <a href="http://pages.github.com/">GitHub-Pages</a> visible ici : <a href="http://gcorbel.github.io/LeapPano/">http://gcorbel.github.io/LeapPano/</a>.</p>
 
