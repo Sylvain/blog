@@ -8,7 +8,6 @@ categories:
 ---
 
 ->Le **dimanche 3 novembre à 17h** (heure française) aura lieu la première édition d'une **table ronde en ligne**.<-
-
 <!--more-->
 Principe
 --------
@@ -21,15 +20,15 @@ Sujet
 Le sujet de la première discussion sera **les designs patterns**.
 
 Voici le plan de la première rencontre :
-  - Présentation des participants;
-  - Définition d'un design pattern;
-  - Discussion à propos des designs patterns connus :
-    - Fat model/Skinny controllers
-    - Service objects
-    - Form objects
-    - DCI
-  - Quels design pattern utilisez-vous?
-  - Varia;
+* Présentation des participants;
+* Définition d'un design pattern;
+* Discussion à propos des designs patterns connus :
+    + Fat model/Skinny controllers
+    + Service objects
+    + Form objects
+    + DCI
+* Quels design pattern utilisez-vous?
+* Varia;
 
 Le plan pourra varier selon l'avancement de la discussion. Aucune limite de temps n'est imposée pour la première rencontre.
 
