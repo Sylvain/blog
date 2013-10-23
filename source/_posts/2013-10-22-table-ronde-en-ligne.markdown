@@ -17,7 +17,7 @@ La discussion doit se faire dans une ambiance cordiale. Personne ne prétend dé
 
 Sujet
 -----
-Le sujet de la première discussion sera **les designs patterns**.
+Le sujet de la première discussion sera **les designs patterns** avec Ruby on Rails.
 
 Voici le plan de la première rencontre :
 
