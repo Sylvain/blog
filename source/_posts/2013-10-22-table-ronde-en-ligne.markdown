@@ -44,6 +44,6 @@ Assurez-vous d'avoir correctement installé le plug-in nécessaire pour particip
 
 Comment participer?
 -------------------
-Si vous êtes disponible à l'heure et à la date indiquée, vous pouvez demander à participer en m'envoyant un courriel à guirec.corbel@gmail.com ou en privé [mon compte Twitter](https://twitter.com/GuirecCorbel)).
+Si vous êtes disponible à l'heure et à la date indiquée, vous pouvez demander à participer en m'envoyant un courriel à guirec.corbel@gmail.com ou en privé [mon compte Twitter](https://twitter.com/GuirecCorbel).
 
 À dimanche!
