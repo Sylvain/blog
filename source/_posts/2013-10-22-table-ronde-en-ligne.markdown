@@ -20,6 +20,7 @@ Sujet
 Le sujet de la première discussion sera **les designs patterns**.
 
 Voici le plan de la première rencontre :
+
 * Présentation des participants;
 * Définition d'un design pattern;
 * Discussion à propos des designs patterns connus :
