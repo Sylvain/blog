@@ -4,7 +4,7 @@
   <title><![CDATA[Guirec Corbel]]></title>
   <link href="http://GCorbel.github.io/blog/atom.xml" rel="self"/>
   <link href="http://GCorbel.github.io/blog/"/>
-  <updated>2013-10-27T14:16:49-04:00</updated>
+  <updated>2013-10-27T14:31:04-04:00</updated>
   <id>http://GCorbel.github.io/blog/</id>
   <author>
     <name><![CDATA[Guirec Corbel]]></name>
@@ -18,7 +18,7 @@
     <link href="http://GCorbel.github.io/blog/blog/2013/10/27/sbire-dites-ce-que-vous-voulez-il-le-fera/"/>
     <updated>2013-10-27T13:24:00-04:00</updated>
     <id>http://GCorbel.github.io/blog/blog/2013/10/27/sbire-dites-ce-que-vous-voulez-il-le-fera</id>
-    <content type="html"><![CDATA[<p>Sbire est un outil permettant d&#8217;exécuter des commandes grâce à la voix. Le principe est simple. Vous taper une commande pour l&#8217;engersitrement d&#8217;une phrase avec un micro et vous taper une seconde commande pour terminer l&#8217;enregistrement. Suite à cela, Sbire avec reconnaitre votre voix et exécuter la commande associée.</p>
+    <content type="html"><![CDATA[<p>Sbire est un outil permettant d&#8217;exécuter des commandes grâce à la voix. Le principe est simple. Vous taper une commande pour l&#8217;enregistrement d&#8217;une phrase avec un micro et vous taper une seconde commande pour terminer l&#8217;enregistrement. Suite à cela, Sbire reconnait votre voix et exécute la commande associée.</p>
 
 <!--more-->
 
@@ -94,7 +94,7 @@ Assurez-vous d&#8217;avoir correctement installé le plug-in nécessaire pour pa
 
 <h2>Comment participer?</h2>
 
-<p>Si vous êtes disponible à l&#8217;heure et à la date indiquée, vous pouvez demander à participer en m&#8217;envoyant un courriel à <a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x67;&#x75;&#105;&#x72;&#101;&#x63;&#x2e;&#99;&#x6f;&#x72;&#98;&#101;&#108;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#117;&#105;&#x72;&#101;&#99;&#x2e;&#99;&#111;&#114;&#98;&#x65;&#108;&#x40;&#x67;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;</a> ou en privé <a href="https://twitter.com/GuirecCorbel">mon compte Twitter</a>.</p>
+<p>Si vous êtes disponible à l&#8217;heure et à la date indiquée, vous pouvez demander à participer en m&#8217;envoyant un courriel à <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#117;&#105;&#x72;&#x65;&#x63;&#x2e;&#99;&#x6f;&#x72;&#x62;&#x65;&#x6c;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;">&#103;&#117;&#x69;&#x72;&#x65;&#x63;&#x2e;&#x63;&#x6f;&#114;&#x62;&#101;&#x6c;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a> ou en privé <a href="https://twitter.com/GuirecCorbel">mon compte Twitter</a>.</p>
 
 <p>À dimanche!</p>
 ]]></content>
