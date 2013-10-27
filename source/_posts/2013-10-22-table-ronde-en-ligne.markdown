@@ -12,7 +12,7 @@ categories:
 Principe
 --------
 Une table ronde est une discussion, avec plusieurs participants, sur un sujet.
-Les participants ne doivent pas forcement être des experts, mais doivent en avoir un minimum de connaissance pour pouvoir en parler.
+Les participants ne doivent pas forcement être des experts dans le domaine, mais doivent avoir de connaissance pour pouvoir en parler.
 La discussion doit se faire dans une ambiance cordiale. Personne ne prétend détenir la solution à tous les problèmes et chacun doit pouvoir exprimer son point de vue en gardant l'esprit ouvert.
 
 Sujet
@@ -35,7 +35,7 @@ Le plan pourra varier selon l'avancement de la discussion. Aucune limite de temp
 
 Où sera publiée la discussion?
 ------------------------------
-La discussion sera publiée sur YouTube. Je publierais la vidéo sur [ma chaine YouTube](http://www.youtube.com/channel/UCRSzJI-E_8cqKwFH3KsZDxQ).
+La discussion sera publiée sur YouTube. Je publierais la vidéo sur [ma chaine YouTube](http://www.youtube.com/channel/UCRSzJI-E_8cqKwFH3KsZDxQ). Je publierai l'adresse sur twitter.
 
 Comment pourrais-je rejoindre la discussion?
 --------------------------------------------
